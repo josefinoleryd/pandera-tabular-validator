@@ -1,0 +1,5 @@
+outage_type,cause_category,customers_affected,extra_kolumn
+planerat,väder,-5,1
+oplanerat,underhåll,10,2
+planerat,underhåll,0,a
+oplanerat,tekniskt fel,20,b

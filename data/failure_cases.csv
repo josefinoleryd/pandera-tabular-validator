@@ -1,0 +1,8 @@
+schema_context,column,check,check_number,failure_case,index
+DataFrameSchema,outage_type,check_outage_cause_relation,0,planerat,0
+DataFrameSchema,outage_type,check_outage_cause_relation,0,oplanerat,1
+DataFrameSchema,cause_category,check_outage_cause_relation,0,väder,0
+DataFrameSchema,cause_category,check_outage_cause_relation,0,underhåll,1
+DataFrameSchema,customers_affected,check_outage_cause_relation,0,-5,0
+DataFrameSchema,customers_affected,check_outage_cause_relation,0,10,1
+Column,customers_affected,greater_than_or_equal_to(0),0,-5,0
