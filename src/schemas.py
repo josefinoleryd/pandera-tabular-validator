@@ -21,7 +21,7 @@ ALLOWED_CAUSE_CATEGORIES: Final[list[str]] = [
     "personal",
     "okänd"
 ]
-MAX_VALID_TIMESTAMP: Final[pd.Timestamp] = pd.Timestamp("2026-06-30 23:59:59")             # Eventuellt ändra till dagens datum?
+MAX_VALID_TIMESTAMP: Final[pd.Timestamp] = pd.Timestamp("2026-06-30 23:59:59")
 COMPENSATION_THRESHOLD_MINUTES: Final[int] = 720 
 
 

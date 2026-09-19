@@ -1,0 +1,13 @@
+incident_id,voltage_level_kv,start_time,end_time,duration_minutes,outage_type,cause_category,customers_affected,compensation_eligible
+INC-2026-001,10.0,2026-01-12 08:30:00,2026-01-12 09:15:00,45,oplanerat,tekniskt_fel,120,False
+INC-2026-018,20.0,2026-02-20 10:00:00,2026-02-20 12:00:00,-120,oplanerat,tekniskt_fel,40,False
+INC-2026-015,130.0,2026-02-04 10:00:00,2026-02-04 11:30:00,90,oplanerat,tekniskt_fel,300,False
+INC-2026-020,0.4,2026-03-15 09:00:00,2026-03-15 12:00:00,180,planerat,väder,8,False
+INC-2026-016,10.0,2038-01-19 04:14:07,2038-01-19 05:14:07,60,oplanerat,tekniskt_fel,50,False
+INC-2026-022,10.0,2026-04-22 13:00:00,2026-04-22 14:00:00,60,oplanerat,tekniskt_fel,-15,False
+INC-2026-019,10.0,2026-03-05 08:00:00,2026-03-05 10:00:00,120,akut,tekniskt_fel,15,False
+INC-2026-024,130.0,2026-06-10 08:00:00,2026-06-10 09:00:00,60,planerat,grävskada,-50,True
+INC-2026-021,20.0,2026-04-10 14:00:00,2026-04-10 15:30:00,90,oplanerat,underhåll,120,False
+INC-2026-017,10.0,2026-02-14 16:00:00,2026-02-07 16:00:00,120,oplanerat,tekniskt_fel,70,False
+INC-2026-023,10.0,2026-05-12 10:00:00,2026-05-12 12:00:00,120,oplanerat,tekniskt_fel,80,True
+INC-2026-001,0.4,2026-05-28 11:00:00,2026-05-28 12:00:00,60,oplanerat,tekniskt_fel,5,False

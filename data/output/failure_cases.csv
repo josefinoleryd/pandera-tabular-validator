@@ -1,0 +1,64 @@
+index,column,check,failure_case
+0,incident_id,field_uniqueness,INC-2026-001
+1,duration_minutes,duration_minutes kan inte vara negativ,-120
+3,voltage_level_kv,"isin([0.4, 10.0, 20.0])",130.0
+5,customers_affected,Konflikt mellan outage_type och cause_category,8
+5,incident_id,Konflikt mellan outage_type och cause_category,INC-2026-020
+5,cause_category,Konflikt mellan outage_type och cause_category,väder
+5,compensation_eligible,Konflikt mellan outage_type och cause_category,False
+5,outage_type,Konflikt mellan outage_type och cause_category,planerat
+5,end_time,Konflikt mellan outage_type och cause_category,2026-03-15 12:00:00
+5,duration_minutes,Konflikt mellan outage_type och cause_category,180
+5,voltage_level_kv,Konflikt mellan outage_type och cause_category,0.4
+5,start_time,Konflikt mellan outage_type och cause_category,2026-03-15 09:00:00
+8,start_time,start_time kan inte ligga i framtiden (> 2026-06-30),2038-01-19 04:14:07
+10,customers_affected,customers_affected kan inte vara negativ,-15
+12,outage_type,"isin(['planerat', 'oplanerat'])",akut
+14,cause_category,Konflikt mellan outage_type och cause_category,grävskada
+14,cause_category,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,grävskada
+14,duration_minutes,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,60
+14,start_time,Konflikt mellan outage_type och cause_category,2026-06-10 08:00:00
+14,voltage_level_kv,Konflikt mellan outage_type och cause_category,130.0
+14,incident_id,Konflikt mellan outage_type och cause_category,INC-2026-024
+14,outage_type,Konflikt mellan outage_type och cause_category,planerat
+14,customers_affected,Konflikt mellan outage_type och cause_category,-50
+14,duration_minutes,Konflikt mellan outage_type och cause_category,60
+14,compensation_eligible,Konflikt mellan outage_type och cause_category,True
+14,incident_id,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,INC-2026-024
+14,compensation_eligible,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,True
+14,customers_affected,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,-50
+14,end_time,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,2026-06-10 09:00:00
+14,outage_type,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,planerat
+14,start_time,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,2026-06-10 08:00:00
+14,voltage_level_kv,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,130.0
+14,end_time,Konflikt mellan outage_type och cause_category,2026-06-10 09:00:00
+14,customers_affected,customers_affected kan inte vara negativ,-50
+14,voltage_level_kv,"isin([0.4, 10.0, 20.0])",130.0
+16,end_time,Konflikt mellan outage_type och cause_category,2026-04-10 15:30:00
+16,start_time,Konflikt mellan outage_type och cause_category,2026-04-10 14:00:00
+16,duration_minutes,Konflikt mellan outage_type och cause_category,90
+16,incident_id,Konflikt mellan outage_type och cause_category,INC-2026-021
+16,voltage_level_kv,Konflikt mellan outage_type och cause_category,20.0
+16,cause_category,Konflikt mellan outage_type och cause_category,underhåll
+16,compensation_eligible,Konflikt mellan outage_type och cause_category,False
+16,customers_affected,Konflikt mellan outage_type och cause_category,120
+16,outage_type,Konflikt mellan outage_type och cause_category,oplanerat
+18,customers_affected,end_time inträffar före start_time,70
+18,cause_category,end_time inträffar före start_time,tekniskt_fel
+18,duration_minutes,end_time inträffar före start_time,120
+18,outage_type,end_time inträffar före start_time,oplanerat
+18,start_time,end_time inträffar före start_time,2026-02-14 16:00:00
+18,compensation_eligible,end_time inträffar före start_time,False
+18,incident_id,end_time inträffar före start_time,INC-2026-017
+18,voltage_level_kv,end_time inträffar före start_time,10.0
+18,end_time,end_time inträffar före start_time,2026-02-07 16:00:00
+20,compensation_eligible,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,True
+20,duration_minutes,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,120
+20,voltage_level_kv,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,10.0
+20,incident_id,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,INC-2026-023
+20,customers_affected,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,80
+20,outage_type,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,oplanerat
+20,cause_category,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,tekniskt_fel
+20,end_time,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,2026-05-12 12:00:00
+20,start_time,Ogiltig ersättningsstatus i förhållande till duration_minutes och outage_type,2026-05-12 10:00:00
+23,incident_id,field_uniqueness,INC-2026-001
