@@ -39,7 +39,7 @@ def test_missing_required_column_raises_schema_error(tmp_path: Path) -> None:
     fejk_data = (
         "voltage_level_kv,start_time,end_time,duration_minutes,"
         "outage_type,cause_category,customers_affected,compensation_eligible\n"
-        "10.0,2026-01-01 10:00:00,2026-01-01 11:00:00,60,oplanerat,teknisktfel,15,False\n"
+        "10.0,2026-01-01 10:00:00,2026-01-01 11:00:00,60,oplanerat,tekniskt_fel,15,False\n"
     )
     broken_csv.write_text(fejk_data, encoding="utf-8")
     output_dir = tmp_path / "output"

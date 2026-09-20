@@ -54,7 +54,7 @@ def run_validation_pipeline(input_path: Path, output_dir: Path) -> tuple[pd.Data
         logger.info("Validering slutförd: Alla rader godkändes.")
 
     except pa.errors.SchemaErrors as exc:
-        # Datainnehållsfel (lazy Validation)
+        # Datainnehållsfel och schemadefekt (lazy validation)
         errors_df = (
             exc.failure_cases[["index", "column", "check", "failure_case"]]
             .drop_duplicates()
@@ -62,14 +62,25 @@ def run_validation_pipeline(input_path: Path, output_dir: Path) -> tuple[pd.Data
             .reset_index(drop=True)
         )
 
-        failed_indices = sorted(
-            int(idx) for idx in errors_df["index"].dropna().unique()
+        # Kontrollera om det finns fel på tabellnivå (där index är NaN, t.ex. saknad kolumn)
+        has_structural_errors = errors_df["index"].isna().any()
+
+        if has_structural_errors:
+            logger.warning(
+                "Strukturella fel upptäcktes (t.ex. saknade obligatoriska kolumner). Hela datasetet avvisas."
+            )
+            clean_df = pd.DataFrame(columns=raw_df.columns)
+            rejected_df = raw_df.copy()
+        else:
+            failed_indices = sorted(
+                int(idx) for idx in errors_df["index"].dropna().unique()
+            )
+            clean_df = raw_df.drop(index=failed_indices).reset_index(drop=True)
+            rejected_df = raw_df.loc[failed_indices].reset_index(drop=True)
+
+        logger.warning(
+            f"Validering klar: {len(clean_df)} rader godkända, {len(rejected_df)} rader avvisade."
         )
-
-        clean_df = raw_df.drop(index=failed_indices).reset_index(drop=True)
-        rejected_df = raw_df.loc[failed_indices].reset_index(drop=True)
-
-        logger.warning(f"Validering klar: {len(clean_df)} rader godkända, {len(rejected_df)} rader avvisade.")
 
     except Exception as exc:
         # Oväntat fel i valideringssteget
