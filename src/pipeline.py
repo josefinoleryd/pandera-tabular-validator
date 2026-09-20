@@ -71,11 +71,6 @@ def run_validation_pipeline(input_path: Path, output_dir: Path) -> tuple[pd.Data
 
         logger.warning(f"Validering klar: {len(clean_df)} rader godkända, {len(rejected_df)} rader avvisade.")
 
-    except pa.errors.SchemaErrors as exc:
-        # Strukturellt fel (t.ex. obligatorisk kolumn saknas helt i tabellen)
-        logger.error(f"Kritiskt strukturellt schemafel: {exc}")
-        raise
-
     except Exception as exc:
         # Oväntat fel i valideringssteget
         logger.error(f"Ett oväntat fel inträffade under valideringen: {exc}")
