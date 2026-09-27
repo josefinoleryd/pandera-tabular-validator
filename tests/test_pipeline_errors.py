@@ -7,7 +7,6 @@ Använder pytests inbyggda tmp_path fixture för att skapa isolerad testdata.
 
 from pathlib import Path
 import pandas as pd
-import pandera.pandas as pa
 import pytest
 
 from src.pipeline import run_validation_pipeline
