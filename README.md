@@ -2,7 +2,7 @@
 
 Det här projektet är en teknisk fördjupning i deklarativ datavalidering för tabulär data med biblioteket Pandera. 
 
-Fokus ligger på att etablera en automatiserad kvalitetsgrind (*Quality Gate*) för elnätsdata (avbrottsstatistik) som stoppar semantiska affärsregler och "tysta fel" innan datan når nedströms analys och beräkning av nyckeltal (t.ex. SAIDI/SAIFI). Pipelinen implementerar ett karantänsmönster (*triage*) via ```lazy=True``` som separerar godkända observationer från felaktiga utan att avbryta körningen i förtid. 
+Fokus ligger på att etablera en automatiserad kvalitetsgrind (*Quality Gate*) för elnätsdata (avbrottsstatistik) som stoppar semantiska fel, avvikelser från affärsregler och "tysta fel" innan datan når nedströms analys och beräkning av nyckeltal (t.ex. SAIDI/SAIFI). Pipelinen implementerar ett karantänsmönster (*triage*) via ```lazy=True``` som separerar godkända observationer från felaktiga utan att avbryta körningen i förtid. 
 
 ## Installation och hur man kör 
 
